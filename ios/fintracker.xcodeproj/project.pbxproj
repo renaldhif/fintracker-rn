@@ -14,6 +14,12 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-fintracker-fintrackerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-fintracker-fintrackerTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8339F5908E9647E698D57443 /* AvenirNextCyr-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F527566548F4A1BB1743324 /* AvenirNextCyr-Bold.ttf */; };
+		E1E0B505514944ECBD06788A /* AvenirNextCyr-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93D19364587D47D69A02C618 /* AvenirNextCyr-Heavy.ttf */; };
+		D398FC43E24849D1B6D9F0EB /* AvenirNextCyr-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CD6AAEEB53C4186A8801563 /* AvenirNextCyr-Light.ttf */; };
+		059852B931444FCEB65BB1C1 /* AvenirNextCyr-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD038959850E47DA87D9EAEA /* AvenirNextCyr-Medium.ttf */; };
+		58C275C24C9048EC84F23A56 /* AvenirNextCyr-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14EF54DF43DF4852BE3127D2 /* AvenirNextCyr-Regular.ttf */; };
+		8BBBC7F33AD44FE99462EF70 /* AvenirNextCyr-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDF888DF54B34FDEA00C9B83 /* AvenirNextCyr-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = fintracker/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-fintracker-fintrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fintracker-fintrackerTests.release.xcconfig"; path = "Target Support Files/Pods-fintracker-fintrackerTests/Pods-fintracker-fintrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		9F527566548F4A1BB1743324 /* AvenirNextCyr-Bold.ttf */ = {isa = PBXFileReference; name = "AvenirNextCyr-Bold.ttf"; path = "../src/assets/fonts/AvenirNextCyr-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		93D19364587D47D69A02C618 /* AvenirNextCyr-Heavy.ttf */ = {isa = PBXFileReference; name = "AvenirNextCyr-Heavy.ttf"; path = "../src/assets/fonts/AvenirNextCyr-Heavy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1CD6AAEEB53C4186A8801563 /* AvenirNextCyr-Light.ttf */ = {isa = PBXFileReference; name = "AvenirNextCyr-Light.ttf"; path = "../src/assets/fonts/AvenirNextCyr-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DD038959850E47DA87D9EAEA /* AvenirNextCyr-Medium.ttf */ = {isa = PBXFileReference; name = "AvenirNextCyr-Medium.ttf"; path = "../src/assets/fonts/AvenirNextCyr-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		14EF54DF43DF4852BE3127D2 /* AvenirNextCyr-Regular.ttf */ = {isa = PBXFileReference; name = "AvenirNextCyr-Regular.ttf"; path = "../src/assets/fonts/AvenirNextCyr-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DDF888DF54B34FDEA00C9B83 /* AvenirNextCyr-Thin.ttf */ = {isa = PBXFileReference; name = "AvenirNextCyr-Thin.ttf"; path = "../src/assets/fonts/AvenirNextCyr-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +134,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				23EEE1549BCB4D5F98A2C6E0 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +160,20 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		23EEE1549BCB4D5F98A2C6E0 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				9F527566548F4A1BB1743324 /* AvenirNextCyr-Bold.ttf */,
+				93D19364587D47D69A02C618 /* AvenirNextCyr-Heavy.ttf */,
+				1CD6AAEEB53C4186A8801563 /* AvenirNextCyr-Light.ttf */,
+				DD038959850E47DA87D9EAEA /* AvenirNextCyr-Medium.ttf */,
+				14EF54DF43DF4852BE3127D2 /* AvenirNextCyr-Regular.ttf */,
+				DDF888DF54B34FDEA00C9B83 /* AvenirNextCyr-Thin.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -243,6 +270,12 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				8339F5908E9647E698D57443 /* AvenirNextCyr-Bold.ttf in Resources */,
+				E1E0B505514944ECBD06788A /* AvenirNextCyr-Heavy.ttf in Resources */,
+				D398FC43E24849D1B6D9F0EB /* AvenirNextCyr-Light.ttf in Resources */,
+				059852B931444FCEB65BB1C1 /* AvenirNextCyr-Medium.ttf in Resources */,
+				58C275C24C9048EC84F23A56 /* AvenirNextCyr-Regular.ttf in Resources */,
+				8BBBC7F33AD44FE99462EF70 /* AvenirNextCyr-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
