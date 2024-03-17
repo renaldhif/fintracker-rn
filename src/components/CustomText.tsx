@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TextStyle, StyleProp } from 'react-native';
+import Colors from './Colors';
 
 export type CustomTextProps = {
   style?: StyleProp<TextStyle>;
@@ -12,7 +13,7 @@ const defaultStyle = StyleSheet.create({
   text: {
     fontFamily: 'AvenirNextCyr-Regular',
     fontSize: 16,
-    color: 'black',
+    color: Colors.text,
   },
 });
 
