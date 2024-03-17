@@ -5,56 +5,19 @@
  * @format
  */
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import * as React from 'react';
+import AppNavigation from './src/navigations/AppNavigation';
+import { Host } from 'react-native-portalize';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import { CustomText } from './src/CustomText';
-
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-// return hello world
 const App = () => {
   return (
-    <SafeAreaView>
-      <StatusBar barStyle="dark-content" />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={styles.scrollView}>
-          <View style={{ margin: 16, backgroundColor: 'yellow' }}>
-            <CustomText>
-              Hello World from CustomText
-            </CustomText>
-          </View>
-      </ScrollView>
-    </SafeAreaView>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Host>
+        <AppNavigation />
+      </Host>
+    </GestureHandlerRootView>
   );
-};
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-});
-
-
+}
 
 export default App;
