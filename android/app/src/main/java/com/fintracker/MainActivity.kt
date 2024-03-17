@@ -1,4 +1,4 @@
-package com.fintracker
+package com.renaldhif.fintracker
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "60707974216",
+    "project_id": "fintracker-rn",
+    "storage_bucket": "fintracker-rn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60707974216:android:2894def1255afff048fc7d",
+        "android_client_info": {
+          "package_name": "com.renaldhif.fintracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9k8XHRJxMkEgmw0JGQ5ovSF6w0009QcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
