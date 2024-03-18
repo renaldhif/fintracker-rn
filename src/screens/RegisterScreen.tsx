@@ -8,8 +8,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import CustomBottomSheet from '../components/CustomBottomSheet';
 import BottomSheet from '@gorhom/bottom-sheet';
 import StorageKey from '../utils/StorageKey';
+import DoneRegistration from '../assets/images/registration-success.svg';
 
-const RegisterScreen = () => {
+const RegisterScreen = ({navigation}: {navigation: any}) => {
   const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -143,9 +144,12 @@ const RegisterScreen = () => {
         index={sheetIndex}
         title="Registration Successful"
         desc="You have successfully registered."
+        Image={DoneRegistration}
+        onChange={handleSheetChanges}
         onPrimaryButtonPress={() => {
           bottomSheetRef.current?.close();
           console.log('Ok button pressed')
+          navigation.navigate('Home');
         }}
         onSecondaryButtonPress={() => {
           bottomSheetRef.current?.close();
