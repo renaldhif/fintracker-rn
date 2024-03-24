@@ -24,7 +24,7 @@ const CustomModal: React.FC<CustomModalProps> = ({ visible, variant, title, mess
       case 'default':
         return (
           <View style={styles.container}>
-            {Image && <Image />}
+            {Image && <Image width={150} height={150}/>}
             <CustomText fontVariant="XL" fontWeight='Bold' style={{ marginBottom: 8 }}>{title}</CustomText>
             <CustomText fontVariant='M' style={{ marginBottom: 16, textAlign: 'center' }}>{message}</CustomText>
             <CustomButton title={primaryButtonTitle ? primaryButtonTitle : "OK"} onPress={onPrimaryButtonPress} />
@@ -33,7 +33,7 @@ const CustomModal: React.FC<CustomModalProps> = ({ visible, variant, title, mess
       case 'confirmation':
         return (
           <View style={styles.container}>
-            {Image && <Image />}
+            {Image && <Image width={150} height={150}/>}
             <CustomText fontVariant="XL" fontWeight='Bold' style={{ marginBottom: 8 }}>{title}</CustomText>
             <CustomText fontVariant='M' style={{ marginBottom: 16, textAlign: 'center' }}>{message}</CustomText>
             <CustomButton title={primaryButtonTitle ? primaryButtonTitle : "OK"} onPress={onPrimaryButtonPress} />

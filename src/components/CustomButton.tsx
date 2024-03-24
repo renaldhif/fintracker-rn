@@ -10,7 +10,7 @@ interface CustomButtonProps {
   buttonShape?: 'rounded' | 'circle' | 'rectangle' | 'pill';
   buttonStyle?: StyleProp<ViewStyle>;
   titleStyle?: StyleProp<TextStyle>;
-  title: string;
+  title?: string;
   iconName?: string;
   iconSize?: number;
   isLoading?: boolean;
