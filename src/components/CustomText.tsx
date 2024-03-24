@@ -5,7 +5,7 @@ import Colors from './Colors';
 export type CustomTextProps = {
   style?: StyleProp<TextStyle>;
   fontWeight?: 'Thin' | 'Light' | 'Regular' | 'Medium' | 'Bold' | 'Heavy';
-  fontVariant?: 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL';
+  fontVariant?: 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | 'XXXL';
   children: React.ReactNode;
 };
 
@@ -59,6 +59,9 @@ export const CustomText = ({ style, children, fontWeight, fontVariant }: CustomT
       break;
     case 'XXL':
       dynamicStyle = { ...dynamicStyle, fontSize: 24 };
+      break;
+    case 'XXXL':
+      dynamicStyle = { ...dynamicStyle, fontSize: 28 };
       break;
   }
 

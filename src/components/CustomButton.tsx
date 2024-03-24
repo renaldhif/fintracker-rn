@@ -83,13 +83,13 @@ const CustomButton: React.FC<CustomButtonProps> = ({ buttonStyle, titleStyle, ti
       borderRadius = 8;
       break;
     case 'circle':
-      borderRadius = 50; // adjust as needed
+      borderRadius = 50;
       break;
     case 'rectangle':
       borderRadius = 0;
       break;
     case 'pill':
-      borderRadius = 20; // adjust as needed
+      borderRadius = 20; 
       break;
     default:
       borderRadius = 8;

@@ -37,7 +37,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({ type, value, label, p
           <CustomText fontWeight='Medium' fontVariant='M' style={styles.required}> *</CustomText>
         }
       </CustomText>
-      <View style={styles.textInputContainer}>
+      <View style={[styles.textInputContainer, error ? { borderColor: Colors.red.primary } : {}]}>
           <TextInput
             value={value}
             onChangeText={onChangeText}
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: Colors.gray.secondary,
     borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: 8,
     backgroundColor: '#fff',
   },
   input: {
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     height: 40,
     color: Colors.text,
     fontFamily: 'AvenirNextCyr-Regular', 
-    marginLeft: 8
+    marginLeft: 8,
   },
   placeholder: {
     position: 'absolute',

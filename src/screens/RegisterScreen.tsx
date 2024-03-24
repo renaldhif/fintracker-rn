@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 import { useCallback, useRef, useState } from "react";
-import { StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, TextInput, Touchable, TouchableOpacity, View } from "react-native";
 import CustomButton from "../components/CustomButton";
 import CustomTextInput from "../components/CustomTextInput";
 import auth from '@react-native-firebase/auth';
@@ -8,15 +8,20 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import CustomBottomSheet from '../components/CustomBottomSheet';
 import BottomSheet from '@gorhom/bottom-sheet';
 import StorageKey from '../utils/StorageKey';
-import DoneRegistration from '../assets/images/registration-success.svg';
+import DoneRegisterIllust from '../assets/images/registration-success.svg';
+import { CustomText } from '../components/CustomText';
+import Colors from '../components/Colors';
+import RegisterIllust from '../assets/images/register.svg';
+import { ScrollView } from 'react-native-gesture-handler';
 
-const RegisterScreen = ({navigation}: {navigation: any}) => {
+const RegisterScreen = ({ navigation }: { navigation: any }) => {
   const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [fullnameError, setFullnameError] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [isCheck, setIsCheck] = useState(false); // check if the user has tried to register to display error message
   const [sheetIndex, setSheetIndex] = useState(-1);
   const bottomSheetRef = useRef<BottomSheet>(null);
 
@@ -37,41 +42,48 @@ const RegisterScreen = ({navigation}: {navigation: any}) => {
 
   const handleFullnameChange = (text: string) => {
     setFullname(text);
-    try {
-      FullnameSchema.validateSync(text);
-      setFullnameError('');
-    } catch (error: any) {
-      setFullnameError(error.message);
+    if (isCheck) {
+      try {
+        FullnameSchema.validateSync(text);
+        setFullnameError('');
+      } catch (error: any) {
+        setFullnameError(error.message);
+      }
     }
   }
 
   const handleEmailChange = (text: string) => {
     setEmail(text);
-    try {
-      EmailSchema.validateSync(text);
-      setEmailError('');
-    } catch (error: any) {
-      setEmailError(error.message);
+    if (isCheck) {
+      try {
+        EmailSchema.validateSync(text);
+        setEmailError('');
+      } catch (error: any) {
+        setEmailError(error.message);
+      }
     }
   };
 
   const handlePasswordChange = (text: string) => {
     setPassword(text);
-    try {
-      PasswordSchema.validateSync(text);
-      setPasswordError('');
-    } catch (error: any) {
-      setPasswordError(error.message);
+    if (isCheck) {
+      try {
+        PasswordSchema.validateSync(text);
+        setPasswordError('');
+      } catch (error: any) {
+        setPasswordError(error.message);
+      }
     }
   };
 
   const handleRegister = async () => {
+    setIsCheck(true);
     try {
       RegisterSchema.validateSync({ fullname, email, password }, { abortEarly: false });
       setFullnameError('');
       setEmailError('');
       setPasswordError('');
-  
+
       // Register the user
       const userCredential = await auth().createUserWithEmailAndPassword(email, password);
       const user = userCredential.user;
@@ -102,8 +114,20 @@ const RegisterScreen = ({navigation}: {navigation: any}) => {
     }
   };
 
+  const navigateToLogin = () => {
+    navigation.replace('Login');
+  }
+
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
+      <View style={{ flexDirection: 'row', marginBottom: 4, marginTop: 12, alignItems: 'center' }}>
+        <CustomText fontVariant="XXXL" fontWeight='Medium' style={{ marginRight: 6 }}>Welcome to</CustomText>
+        <CustomText fontVariant="XXXL" fontWeight='Medium' style={{ color: Colors.primary }}>Fintracker</CustomText>
+      </View>
+      <CustomText fontVariant="M" style={{ lineHeight: 22 }}>Register now to unlock the power of financial control</CustomText>
+      <View style={{ alignItems: 'center'}}>
+        <RegisterIllust width={300} height={250} />
+      </View>
       <CustomTextInput
         required
         label="Full Name"
@@ -134,17 +158,24 @@ const RegisterScreen = ({navigation}: {navigation: any}) => {
         title="Register"
         onPress={handleRegister}
         buttonColorVariant="primary"
-        buttonVariant="buttonTextIconLeft"
+        buttonVariant="buttonText"
         buttonShape="rounded"
-        iconName="person"
         iconSize={16}
       />
+      <View style={{ flex: 1, marginTop: 16 }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+          <CustomText fontVariant='M' fontWeight='Regular' style={{ textAlign: 'center' }}>Already have an account?</CustomText>
+          <TouchableOpacity onPress={navigateToLogin}>
+            <CustomText fontVariant='M' fontWeight='Bold' style={{ textAlign: 'center', color: Colors.primary, marginLeft: 4 }}>Login</CustomText>
+          </TouchableOpacity>
+        </View>
+      </View>
       <CustomBottomSheet
         ref={bottomSheetRef}
         index={sheetIndex}
         title="Registration Successful"
         desc="You have successfully registered."
-        Image={DoneRegistration}
+        Image={DoneRegisterIllust}
         onChange={handleSheetChanges}
         onPrimaryButtonPress={() => {
           bottomSheetRef.current?.close();
@@ -156,16 +187,15 @@ const RegisterScreen = ({navigation}: {navigation: any}) => {
           console.log('Cancel button pressed')
         }}
       />
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: Colors.background_light,
     flex: 1,
-    justifyContent: 'center',
-    padding: 20,
+    padding: 16,
   },
 });
 
