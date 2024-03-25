@@ -14,6 +14,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import LoginIllust from '../assets/images/login.svg';
 import CustomModal from '../components/CustomModal';
 import { getFirebaseErrorMessages } from '../utils/FirebaseErrorMessages';
+import { getUserToken, login } from '../services/authService';
 
 
 const LoginScreen = ({ navigation }: { navigation: any }) => {
@@ -70,9 +71,16 @@ const LoginScreen = ({ navigation }: { navigation: any }) => {
       setPasswordError('');
   
       // Sign in with Firebase
-      const userCredential = await auth().signInWithEmailAndPassword(email, password);
-      const user = userCredential;
-      console.log('User signed in: ', user);
+      const userCredential = await login({ email, password });
+      const userToken = await getUserToken();
+      await AsyncStorage.setItem(StorageKey.KEY_USER, JSON.stringify(userCredential?.user)).then(() => {
+        console.log('User data stored in AsyncStorage');
+      });
+      await AsyncStorage.setItem(StorageKey.KEY_TOKEN, JSON.stringify(userToken)).then(() => {
+        console.log('Token stored in AsyncStorage');
+      });
+      setIsLoading(false);
+      navigation.replace('Home');
     } catch (error: any) {
       if (error.inner) {
         if (error.inner.length === 1) {
